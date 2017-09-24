@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace ASWT_MarsTime
 {
@@ -32,7 +33,13 @@ namespace ASWT_MarsTime
 
         public MarsTime(string input)
         {
-
+            if (Regex.IsMatch(input, ("^(0-9){2}:?(0-9){3}$")))
+            {
+                input = input.Replace(":", "");
+                this.hour = int.Parse(input.Substring(0, 2));
+                this.min = int.Parse(input.Substring(2, 3));
+            }
+            else { throw new Exception("Invalid input format. (use 00:000)");  }
         }
 
 
@@ -42,6 +49,26 @@ namespace ASWT_MarsTime
 
             if (hour.CompareTo(tmp.hour) != 0) { return hour.CompareTo(tmp.hour);  }
             return min.CompareTo(tmp.min);
+        }
+
+        public static bool operator <(MarsTime mt1, MarsTime mt2)
+        {
+            return mt1.CompareTo(mt2) < 0;
+        }
+
+        public static bool operator >(MarsTime mt1, MarsTime mt2)
+        {
+            return mt1.CompareTo(mt2) > 0;
+        }
+
+        public static bool operator ==(MarsTime mt1, MarsTime mt2)
+        {
+            return mt1.CompareTo(mt2) == 0;
+        }
+
+        public static bool operator !=(MarsTime mt1, MarsTime mt2)
+        {
+            return mt1.CompareTo(mt2) != 0;
         }
     }
 }
