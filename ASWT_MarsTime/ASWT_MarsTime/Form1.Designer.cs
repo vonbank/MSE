@@ -30,11 +30,11 @@
         {
             this.btn_check = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tb_interval_1_1 = new System.Windows.Forms.TextBox();
             this.tb_interval_1_2 = new System.Windows.Forms.TextBox();
-            this.tb_interval_2_1 = new System.Windows.Forms.TextBox();
+            this.tb_interval_1_1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_interval_2_2 = new System.Windows.Forms.TextBox();
+            this.tb_interval_2_1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,6 +63,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interval 1";
             // 
+            // tb_interval_1_2
+            // 
+            this.tb_interval_1_2.Location = new System.Drawing.Point(128, 19);
+            this.tb_interval_1_2.Name = "tb_interval_1_2";
+            this.tb_interval_1_2.Size = new System.Drawing.Size(78, 20);
+            this.tb_interval_1_2.TabIndex = 1;
+            // 
+            // tb_interval_1_1
+            // 
+            this.tb_interval_1_1.Location = new System.Drawing.Point(23, 19);
+            this.tb_interval_1_1.Name = "tb_interval_1_1";
+            this.tb_interval_1_1.Size = new System.Drawing.Size(78, 20);
+            this.tb_interval_1_1.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -75,19 +89,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Interval 2";
             // 
-            // tb_interval_1_1
+            // tb_interval_2_2
             // 
-            this.tb_interval_1_1.Location = new System.Drawing.Point(23, 19);
-            this.tb_interval_1_1.Name = "tb_interval_1_1";
-            this.tb_interval_1_1.Size = new System.Drawing.Size(78, 20);
-            this.tb_interval_1_1.TabIndex = 0;
-            // 
-            // tb_interval_1_2
-            // 
-            this.tb_interval_1_2.Location = new System.Drawing.Point(128, 19);
-            this.tb_interval_1_2.Name = "tb_interval_1_2";
-            this.tb_interval_1_2.Size = new System.Drawing.Size(78, 20);
-            this.tb_interval_1_2.TabIndex = 1;
+            this.tb_interval_2_2.Location = new System.Drawing.Point(129, 19);
+            this.tb_interval_2_2.Name = "tb_interval_2_2";
+            this.tb_interval_2_2.Size = new System.Drawing.Size(78, 20);
+            this.tb_interval_2_2.TabIndex = 2;
             // 
             // tb_interval_2_1
             // 
@@ -96,21 +103,14 @@
             this.tb_interval_2_1.Size = new System.Drawing.Size(78, 20);
             this.tb_interval_2_1.TabIndex = 1;
             // 
-            // tb_interval_2_2
-            // 
-            this.tb_interval_2_2.Location = new System.Drawing.Point(129, 19);
-            this.tb_interval_2_2.Name = "tb_interval_2_2";
-            this.tb_interval_2_2.Size = new System.Drawing.Size(78, 20);
-            this.tb_interval_2_2.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(353, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Format: 00:000";
+            this.label1.Text = "Format: 00:00";
             // 
             // Form1
             // 

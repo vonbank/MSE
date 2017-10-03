@@ -21,5 +21,43 @@ namespace ASWT_MarsTime
             this.time_end = tend;
         }
 
+        public bool Nested(MarsTimeInterval otherInterval)
+        {
+            if ((this.time_start <= otherInterval.time_start && this.time_end >= otherInterval.time_end) ||
+                (otherInterval.time_start <= this.time_start && otherInterval.time_end >= this.time_end))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Overlaps(MarsTimeInterval otherInterval)
+        {
+            if (this.Nested(otherInterval) == false &&
+                ((this.time_start < otherInterval.time_end && this.time_end > otherInterval.time_end) ||
+                (this.time_start < otherInterval.time_start && this.time_end > otherInterval.time_start)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Touches(MarsTimeInterval otherInterval)
+        {
+            if ((this.time_start == otherInterval.time_end ^ this.time_end == otherInterval.time_start) && this.Nested(otherInterval) == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

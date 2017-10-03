@@ -19,7 +19,8 @@ namespace ASWT_MarsTime
 
         private void btn_check_Click(object sender, EventArgs e)
         {
-
+            MarsTimeIntervalResult result = MarsTimeProcessor.processUserInput(this.tb_interval_1_1.Text.Trim(), this.tb_interval_1_2.Text.Trim(), this.tb_interval_2_1.Text.Trim(), this.tb_interval_2_2.Text.Trim());
+            MessageBox.Show(result.ToString(), "Result", MessageBoxButtons.OK);
         }
     }
 }

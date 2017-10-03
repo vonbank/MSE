@@ -33,13 +33,13 @@ namespace ASWT_MarsTime
 
         public MarsTime(string input)
         {
-            if (Regex.IsMatch(input, ("^(0-9){2}:?(0-9){3}$")))
+            if (Regex.IsMatch(input, ("^[0-9]{2}:?[0-9]{2}$")))
             {
                 input = input.Replace(":", "");
                 this.hour = int.Parse(input.Substring(0, 2));
-                this.min = int.Parse(input.Substring(2, 3));
+                this.min = int.Parse(input.Substring(2, 2));
             }
-            else { throw new Exception("Invalid input format. (use 00:000)");  }
+            else { throw new Exception("Invalid input format. (use 00:00)");  }
         }
 
 
@@ -69,6 +69,16 @@ namespace ASWT_MarsTime
         public static bool operator !=(MarsTime mt1, MarsTime mt2)
         {
             return mt1.CompareTo(mt2) != 0;
+        }
+
+        public static bool operator <=(MarsTime mt1, MarsTime mt2)
+        {
+            return mt1.CompareTo(mt2) <= 0;
+        }
+
+        public static bool operator >=(MarsTime mt1, MarsTime mt2)
+        {
+            return mt1.CompareTo(mt2) >= 0;
         }
     }
 }

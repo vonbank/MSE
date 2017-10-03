@@ -27,9 +27,33 @@ namespace ASWT_MarsTime
                 return MarsTimeIntervalResult.ERROR;
             }
 
+            MarsTimeInterval mti_1, mti_2;
+            try
+            {
+                mti_1 = new MarsTimeInterval(mt_1_1, mt_1_2);
+                mti_2 = new MarsTimeInterval(mt_2_1, mt_2_2);
+            }
+            catch
+            {
+                return MarsTimeIntervalResult.ERROR;
+            }
 
-
-            return MarsTimeIntervalResult.ERROR;
+            if (mti_1.Nested(mti_2) == true)
+            {
+                return MarsTimeIntervalResult.NESTED;
+            }
+            else if (mti_1.Overlaps(mti_2) == true)
+            {
+                return MarsTimeIntervalResult.OVERLAP;
+            }
+            else if (mti_1.Touches(mti_2))
+            {
+                return MarsTimeIntervalResult.TOUCH;
+            }
+            else
+            {
+                return MarsTimeIntervalResult.DISJOINT;
+            }
         }
     }
 }
